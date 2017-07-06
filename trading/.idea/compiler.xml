@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="fx-client" />
+        <module name="fx-domain-model" />
+        <module name="fx-service" />
+        <module name="fx-service-model" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fx" target="1.5" />
+      <module name="fx-client" target="1.8" />
+      <module name="fx-domain-model" target="1.5" />
+      <module name="fx-service" target="1.8" />
+      <module name="fx-service-model" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

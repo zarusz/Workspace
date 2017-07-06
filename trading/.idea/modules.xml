@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/fx.iml" filepath="$PROJECT_DIR$/fx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fx-client/fx-client.iml" filepath="$PROJECT_DIR$/fx-client/fx-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fx-domain-model/fx-domain-model.iml" filepath="$PROJECT_DIR$/fx-domain-model/fx-domain-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fx-service/fx-service.iml" filepath="$PROJECT_DIR$/fx-service/fx-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fx-service-model/fx-service-model.iml" filepath="$PROJECT_DIR$/fx-service-model/fx-service-model.iml" />
+    </modules>
+  </component>
+</project>
