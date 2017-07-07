@@ -1,11 +1,16 @@
 import com.cs.fx.service.model.*;
+import com.cs.fx.service.model.config.SerializationConfiguration;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.joda.JodaModule;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.json.JacksonTester;
+import org.springframework.context.annotation.Import;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -16,6 +21,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by Tomasz on 06.07.2017.
  */
+@RunWith(SpringRunner.class)
+@Import(SerializationConfiguration.class)
 public class DeserializationTest {
 
     private JacksonTester<SpotTradeDto> spotJson;
@@ -23,18 +30,22 @@ public class DeserializationTest {
     private JacksonTester<VanillaOptionTradeDto> optionJson;
     private JacksonTester<List<FxTradeDto>> fxTradesJson;
 
+    @TestConfiguration
+    static class EmployeeServiceImplTestContextConfiguration {
+    }
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @Before
     public void setup() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.registerModule(new JodaModule());
-        // Possibly configure the mapper
         JacksonTester.initFields(this, objectMapper);
     }
 
     @Test
     public void ensureSpotTradeSampleDeserializes() throws IOException {
         // arrange
-        String content = SampleUtil.loadSample("sample-spot-trade.json");
+        String content = SampleUtil.loadSample("/sample-spot-trade.json");
 
         // act
         SpotTradeDto trade = spotJson.parseObject(content);
@@ -58,7 +69,7 @@ public class DeserializationTest {
     @Test
     public void ensureForwardTradeSampleDeserializes() throws IOException {
         // arrange
-        String content = SampleUtil.loadSample("sample-forward-trade.json");
+        String content = SampleUtil.loadSample("/sample-forward-trade.json");
 
         // act
         ForwardTradeDto trade = forwardJson.parseObject(content);
@@ -82,7 +93,7 @@ public class DeserializationTest {
     @Test
     public void ensureVanillaOptionTradeSampleDeserializes() throws IOException {
         // arrange
-        String content = SampleUtil.loadSample("sample-vanillaoption-trade.json");
+        String content = SampleUtil.loadSample("/sample-vanillaoption-trade.json");
 
         // act
         VanillaOptionTradeDto trade = optionJson.parseObject(content);
@@ -116,7 +127,7 @@ public class DeserializationTest {
     @Test
     public void ensurePolymorphismWorksAndDeserializes() throws IOException {
         // arrange
-        String content = SampleUtil.loadSample("sample-trade-data.json");
+        String content = SampleUtil.loadSample("/sample-trade-data.json");
 
         // act
         List<FxTradeDto> fxTrades = fxTradesJson.parseObject(content);

@@ -1,0 +1,4 @@
+service:
+  url: http://localhost:8080
+  batch_method: /trade/batch
+
