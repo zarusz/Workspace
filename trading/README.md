@@ -3,26 +3,20 @@
 ## How to launch?
 
 1. Navigate to the parent pom file (where the mvnw file is).
-
 2. Install all dependencies:
-  
 ```
 mvnw install
 ```
-
 3. Launch service
-
 ```
 mvnw spring-boot:run -pl fx-service
 ```
-
 4. Launch client
-
 ```
 mvnw spring-boot:run -pl fx-client
 ```
 
-If all goes well, you shoudl see something like this:
+The fx-client will submit the sample trades (`fx-client/src/main/resources/test-trade-data.json`) and if all goes well, you shoudl see something like this:
 
 ```
 2017-07-07 13:59:30.137  INFO 4872 --- [           main] com.cs.fx.fxclient.MainApplication       : Starting MainApplication on zarusz with PID 4872 (E:\dev\work\Workspace\trading\fx-client\target\classes started by Tomasz in e:\dev\work\Workspace\trading)
