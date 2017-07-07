@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="fx-client" />
+        <module name="fx-data-access-mock" />
         <module name="fx-domain-model" />
         <module name="fx-service" />
         <module name="fx-service-model" />
@@ -15,6 +16,7 @@
     <bytecodeTargetLevel>
       <module name="fx" target="1.5" />
       <module name="fx-client" target="1.8" />
+      <module name="fx-data-access-mock" target="1.8" />
       <module name="fx-domain-model" target="1.5" />
       <module name="fx-service" target="1.8" />
       <module name="fx-service-model" target="1.8" />

@@ -69,13 +69,13 @@ public class MainApplication implements CommandLineRunner {
 
             int tradeNumber = tradeIndex + 1;
 
-            LOG.info("Trade #{} was {}", tradeNumber, tradeResult.isSuccess() ? "successful" : "failed");
             if (tradeResult.isSuccess()) {
-                LOG.info("Trade #{} transaction ID is {}", tradeNumber, tradeResult.getTransactionId());
+                LOG.info("Trade #{} was successful, transaction ID: {}", tradeNumber, tradeResult.getTransactionId());
             } else {
+                LOG.info("Trade #{} was rejected", tradeNumber);
                 int errorNumber = 0;
                 for (ErrorCodeDto errorCode: tradeResult.getErrors()) {
-                    LOG.error("Trade #{} validation error #{} - code: {} message: {}", tradeNumber, errorNumber, tradeResult.getTransactionId(), errorCode.getCode(), errorCode.getMessage());
+                    LOG.error("Trade #{} validation error #{} - code: {} message: {}", tradeNumber, errorNumber, errorCode.getCode(), errorCode.getMessage());
                     errorNumber++;
                 }
             }

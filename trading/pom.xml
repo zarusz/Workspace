@@ -23,6 +23,7 @@
         <module>fx-service-model</module>
         <module>fx-service</module>
         <module>fx-client</module>
+        <module>fx-data-access-mock</module>
     </modules>
 
     <dependencyManagement>
@@ -39,6 +40,11 @@
                 <version>${spring.version}</version>
             </dependency>
             -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>

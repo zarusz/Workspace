@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/fx.iml" filepath="$PROJECT_DIR$/fx.iml" />
       <module fileurl="file://$PROJECT_DIR$/fx-client/fx-client.iml" filepath="$PROJECT_DIR$/fx-client/fx-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fx-data-access-mock/fx-data-access-mock.iml" filepath="$PROJECT_DIR$/fx-data-access-mock/fx-data-access-mock.iml" />
       <module fileurl="file://$PROJECT_DIR$/fx-domain-model/fx-domain-model.iml" filepath="$PROJECT_DIR$/fx-domain-model/fx-domain-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/fx-service/fx-service.iml" filepath="$PROJECT_DIR$/fx-service/fx-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/fx-service-model/fx-service-model.iml" filepath="$PROJECT_DIR$/fx-service-model/fx-service-model.iml" />
