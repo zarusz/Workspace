@@ -1,5 +1,7 @@
 # Small FX trading REST service
 
+This Java project is to showcase how to expose a REST service and perform some validation logic.
+
 ## How to launch?
 
 1. Navigate to the parent pom file (where the mvnw file is).
