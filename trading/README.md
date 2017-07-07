@@ -94,3 +94,13 @@ Layers
 * Few additional validation rules were added.
 * Infrastructure has been mocked (no DB connectivity).
 * Validation should be extensible.
+
+## Extra
+
+* Add REST API documentation (by using [Spring REST Docs](http://www.baeldung.com/spring-rest-docs) or [Swagger](https://swagger.io/))
+* Scalability could be achieved by:
+  * Making the REST method [asynchronious](http://carlmartensen.com/completablefuture-deferredresult-async), yet care should be taken to execute orders in order.
+  * Partitioning the processing (e.g. based on currency pairs). Also assign more processors to the most popular currency pairs.
+  * The OrderManager should be behind some messaging service (scalability and availability). For example for Apache Kafka each topic could be individual currency pair.
+  * The implementations (e.g. CustomerRepostitory) could be decorated in a cached implementation (if the mocks would be replaced by DB impementations).
+  
