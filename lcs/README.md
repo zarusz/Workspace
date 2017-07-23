@@ -17,7 +17,7 @@ Hence the technology stack chosen for this task is:
 
 Folders (Node packages):
 * `\task-logic`
-    * Standalone Node module that has 2 implementations for finding longest common substring for two strings. 
+    * Standalone Node module that has implementation for finding longest common substring for two strings. 
     * Possible Commands:
         * `npm test` - test
 * `\task-web`
