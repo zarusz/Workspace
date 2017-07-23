@@ -1,0 +1,67 @@
+<div class="row">
+
+  <div class="col-md-6 col-md-offset-3">
+
+    <div class="well well-lg">
+      Problem: Given 2 strings, find the longest common subsequence...
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Inputs</div>
+      <div class="panel-body">
+
+        <form #calcForm="ngForm">
+
+          <span id="helpBlock" class="help-block">Enter two strings and hit calculate button.</span>
+
+          <div class="form-group">
+            <label for="stringa">String A</label>
+            <input type="text" class="form-control" id="stringa"
+                   name="stringa"
+                   required
+                   placeholder="Enter string here ..."
+                   [(ngModel)]="a">
+          </div>
+          <div class="form-group">
+            <label for="stringb">String B</label>
+            <input type="text" class="form-control" id="stringb"
+                   name="stringb"
+                   required
+                   placeholder="Enter string here ..."
+                   [(ngModel)]="b">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" (click)="doCalculate(a, b)" [disabled]="!calcForm.form.valid">Calculate</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="panel panel-default" *ngIf="cases.length > 0">
+      <div class="panel-heading">Results</div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <th width="35%">String A</th>
+            <th width="35%">String B</th>
+            <th width="30%">Longest Common Subsequence</th>
+          </thead>
+          <tr *ngFor="let c of cases">
+            <td>{{c.a}}</td>
+            <td>{{c.b}}</td>
+            <td>{{c.r}}</td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
